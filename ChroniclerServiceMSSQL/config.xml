@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<config>
+ <database>
+  <connectionString>Provider=SQLNCLI10.1;User ID=worktime;Password=work;Initial Catalog=Chronicler;Data Source=oracle-srv;</connectionString>
+ </database>
+ <OPC>
+  <server>
+    <serverId>srv103</serverId>
+    <serverName>{13FBEFCD-AF85-4AA6-8A6B-394230901A0A}</serverName>
+    <hostName>localhost</hostName>
+    <isActive>1</isActive>
+  </server>
+ </OPC>
+</config>

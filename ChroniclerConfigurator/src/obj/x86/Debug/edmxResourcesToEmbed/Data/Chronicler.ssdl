@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChroniclerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ChroniclerModelStoreContainer">
+    <EntitySet Name="department" EntityType="ChroniclerModel.Store.department" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="department_class" EntityType="ChroniclerModel.Store.department_class" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="department_class_dep" EntityType="ChroniclerModel.Store.department_class_dep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="equipment" EntityType="ChroniclerModel.Store.equipment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="equipment_class" EntityType="ChroniclerModel.Store.equipment_class" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="equipment_class_dep" EntityType="ChroniclerModel.Store.equipment_class_dep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="property" EntityType="ChroniclerModel.Store.property" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="property_collection_source" EntityType="ChroniclerModel.Store.property_collection_source" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="property_definition" EntityType="ChroniclerModel.Store.property_definition" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="property_history" EntityType="ChroniclerModel.Store.property_history" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="property_storage_group" EntityType="ChroniclerModel.Store.property_storage_group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="property_type" EntityType="ChroniclerModel.Store.property_type" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PROPERTY_GROUP" Association="ChroniclerModel.Store.FK_PROPERTY_GROUP">
+      <End Role="property_collection_source" EntitySet="property_collection_source" />
+      <End Role="property" EntitySet="property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPERTY_ID2" Association="ChroniclerModel.Store.FK_PROPERTY_ID2">
+      <End Role="property" EntitySet="property" />
+      <End Role="property_history" EntitySet="property_history" />
+    </AssociationSet>
+    <AssociationSet Name="R_18" Association="ChroniclerModel.Store.R_18">
+      <End Role="equipment" EntitySet="equipment" />
+      <End Role="equipment1" EntitySet="equipment" />
+    </AssociationSet>
+    <AssociationSet Name="R_20" Association="ChroniclerModel.Store.R_20">
+      <End Role="department" EntitySet="department" />
+      <End Role="equipment" EntitySet="equipment" />
+    </AssociationSet>
+    <AssociationSet Name="R_21" Association="ChroniclerModel.Store.R_21">
+      <End Role="department" EntitySet="department" />
+      <End Role="department1" EntitySet="department" />
+    </AssociationSet>
+    <AssociationSet Name="R_22" Association="ChroniclerModel.Store.R_22">
+      <End Role="department_class" EntitySet="department_class" />
+      <End Role="department" EntitySet="department" />
+    </AssociationSet>
+    <AssociationSet Name="R_23" Association="ChroniclerModel.Store.R_23">
+      <End Role="equipment_class" EntitySet="equipment_class" />
+      <End Role="equipment" EntitySet="equipment" />
+    </AssociationSet>
+    <AssociationSet Name="R_24" Association="ChroniclerModel.Store.R_24">
+      <End Role="department_class" EntitySet="department_class" />
+      <End Role="department_class_dep" EntitySet="department_class_dep" />
+    </AssociationSet>
+    <AssociationSet Name="R_25" Association="ChroniclerModel.Store.R_25">
+      <End Role="department_class" EntitySet="department_class" />
+      <End Role="department_class_dep" EntitySet="department_class_dep" />
+    </AssociationSet>
+    <AssociationSet Name="R_26" Association="ChroniclerModel.Store.R_26">
+      <End Role="equipment_class" EntitySet="equipment_class" />
+      <End Role="equipment_class_dep" EntitySet="equipment_class_dep" />
+    </AssociationSet>
+    <AssociationSet Name="R_27" Association="ChroniclerModel.Store.R_27">
+      <End Role="equipment_class" EntitySet="equipment_class" />
+      <End Role="equipment_class_dep" EntitySet="equipment_class_dep" />
+    </AssociationSet>
+    <AssociationSet Name="R_28" Association="ChroniclerModel.Store.R_28">
+      <End Role="equipment" EntitySet="equipment" />
+      <End Role="property" EntitySet="property" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="department_name" Type="nvarchar" MaxLength="1000" />
+    <Property Name="department_class_id" Type="numeric" Precision="12" />
+    <Property Name="department_description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="department_parent_id" Type="numeric" Precision="12" />
+  </EntityType>
+  <EntityType Name="department_class">
+    <Key>
+      <PropertyRef Name="department_class_id" />
+    </Key>
+    <Property Name="department_class_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="department_class_name" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="department_class_dep">
+    <Key>
+      <PropertyRef Name="dependency_id" />
+    </Key>
+    <Property Name="dependency_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="department_class_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="department_class_parent_id" Type="numeric" Nullable="false" Precision="12" />
+  </EntityType>
+  <EntityType Name="equipment">
+    <Key>
+      <PropertyRef Name="equipment_id" />
+    </Key>
+    <Property Name="equipment_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="equipment_name" Type="nvarchar(max)" />
+    <Property Name="equipment_class_id" Type="numeric" Precision="12" />
+    <Property Name="equipment_descriprion" Type="nvarchar" MaxLength="1000" />
+    <Property Name="equipment_parent_id" Type="numeric" Precision="12" />
+    <Property Name="department_id" Type="numeric" Precision="12" />
+  </EntityType>
+  <EntityType Name="equipment_class">
+    <Key>
+      <PropertyRef Name="equipment_class_id" />
+    </Key>
+    <Property Name="equipment_class_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="equipment_class_name" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="equipment_class_dep">
+    <Key>
+      <PropertyRef Name="equipment_dependency_id" />
+    </Key>
+    <Property Name="equipment_dependency_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="equipment_class_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="equipment_class_parent_id" Type="numeric" Nullable="false" Precision="12" />
+  </EntityType>
+  <EntityType Name="property">
+    <Key>
+      <PropertyRef Name="property_id" />
+    </Key>
+    <Property Name="property_id" Type="numeric" Nullable="false" Precision="12" StoreGeneratedPattern="Identity" />
+    <Property Name="property_name" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="string_value" Type="nvarchar" MaxLength="1000" />
+    <Property Name="integer_value" Type="numeric" Precision="38" />
+    <Property Name="boolean_value" Type="numeric" Precision="1" />
+    <Property Name="double_value" Type="float" />
+    <Property Name="date_value" Type="datetime" />
+    <Property Name="tag_name" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="last_update_date" Type="datetime" Nullable="false" />
+    <Property Name="property_definition_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="collection_source_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="equipment_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="property_storage_group_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="property_value_type_id" Type="numeric" />
+  </EntityType>
+  <EntityType Name="property_collection_source">
+    <Key>
+      <PropertyRef Name="collection_source_id" />
+    </Key>
+    <Property Name="collection_source_id" Type="numeric" Nullable="false" Precision="12" StoreGeneratedPattern="Identity" />
+    <Property Name="source_refresh_interval" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="source_description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="source_group_name" Type="nvarchar" MaxLength="1000" />
+    <Property Name="source_is_active" Type="numeric" Precision="1" />
+    <Property Name="source_server_id" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="property_definition">
+    <Key>
+      <PropertyRef Name="property_definition_id" />
+    </Key>
+    <Property Name="property_definition_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="property_definition_name" Type="nvarchar" MaxLength="1000" />
+    <Property Name="property_definition_descr" Type="nvarchar" MaxLength="1000" />
+    <Property Name="property_type_id" Type="numeric" Nullable="false" Precision="12" />
+  </EntityType>
+  <EntityType Name="property_history">
+    <Key>
+      <PropertyRef Name="property_history_id" />
+    </Key>
+    <Property Name="property_history_id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="numeric" Nullable="false" />
+    <Property Name="property_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="string_value" Type="nvarchar" MaxLength="1000" />
+    <Property Name="integer_value" Type="numeric" Precision="38" />
+    <Property Name="boolean_value" Type="numeric" Precision="1" />
+    <Property Name="double_value" Type="float" />
+    <Property Name="date_value" Type="datetime" />
+    <Property Name="start_date" Type="datetime" Nullable="false" />
+    <Property Name="finish_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="property_storage_group">
+    <Key>
+      <PropertyRef Name="property_storage_group_id" />
+    </Key>
+    <Property Name="property_storage_group_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="storage_group_time" Type="numeric" />
+    <Property Name="storage_group_is_historical" Type="numeric" Precision="1" />
+    <Property Name="storage_group_description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="property_type">
+    <Key>
+      <PropertyRef Name="property_type_id" />
+    </Key>
+    <Property Name="property_type_id" Type="numeric" Nullable="false" Precision="12" />
+    <Property Name="property_type_name" Type="nvarchar" MaxLength="1000" />
+    <Property Name="property_type_description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <Association Name="FK_PROPERTY_GROUP">
+    <End Role="property_collection_source" Type="ChroniclerModel.Store.property_collection_source" Multiplicity="1" />
+    <End Role="property" Type="ChroniclerModel.Store.property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="property_collection_source">
+        <PropertyRef Name="collection_source_id" />
+      </Principal>
+      <Dependent Role="property">
+        <PropertyRef Name="collection_source_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPERTY_ID2">
+    <End Role="property" Type="ChroniclerModel.Store.property" Multiplicity="1" />
+    <End Role="property_history" Type="ChroniclerModel.Store.property_history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="property">
+        <PropertyRef Name="property_id" />
+      </Principal>
+      <Dependent Role="property_history">
+        <PropertyRef Name="property_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_18">
+    <End Role="equipment" Type="ChroniclerModel.Store.equipment" Multiplicity="0..1" />
+    <End Role="equipment1" Type="ChroniclerModel.Store.equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="equipment">
+        <PropertyRef Name="equipment_id" />
+      </Principal>
+      <Dependent Role="equipment1">
+        <PropertyRef Name="equipment_parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_20">
+    <End Role="department" Type="ChroniclerModel.Store.department" Multiplicity="0..1" />
+    <End Role="equipment" Type="ChroniclerModel.Store.equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="equipment">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_21">
+    <End Role="department" Type="ChroniclerModel.Store.department" Multiplicity="0..1" />
+    <End Role="department1" Type="ChroniclerModel.Store.department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="department1">
+        <PropertyRef Name="department_parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_22">
+    <End Role="department_class" Type="ChroniclerModel.Store.department_class" Multiplicity="0..1" />
+    <End Role="department" Type="ChroniclerModel.Store.department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department_class">
+        <PropertyRef Name="department_class_id" />
+      </Principal>
+      <Dependent Role="department">
+        <PropertyRef Name="department_class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_23">
+    <End Role="equipment_class" Type="ChroniclerModel.Store.equipment_class" Multiplicity="0..1" />
+    <End Role="equipment" Type="ChroniclerModel.Store.equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="equipment_class">
+        <PropertyRef Name="equipment_class_id" />
+      </Principal>
+      <Dependent Role="equipment">
+        <PropertyRef Name="equipment_class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_24">
+    <End Role="department_class" Type="ChroniclerModel.Store.department_class" Multiplicity="1" />
+    <End Role="department_class_dep" Type="ChroniclerModel.Store.department_class_dep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department_class">
+        <PropertyRef Name="department_class_id" />
+      </Principal>
+      <Dependent Role="department_class_dep">
+        <PropertyRef Name="department_class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_25">
+    <End Role="department_class" Type="ChroniclerModel.Store.department_class" Multiplicity="1" />
+    <End Role="department_class_dep" Type="ChroniclerModel.Store.department_class_dep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department_class">
+        <PropertyRef Name="department_class_id" />
+      </Principal>
+      <Dependent Role="department_class_dep">
+        <PropertyRef Name="department_class_parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_26">
+    <End Role="equipment_class" Type="ChroniclerModel.Store.equipment_class" Multiplicity="1" />
+    <End Role="equipment_class_dep" Type="ChroniclerModel.Store.equipment_class_dep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="equipment_class">
+        <PropertyRef Name="equipment_class_id" />
+      </Principal>
+      <Dependent Role="equipment_class_dep">
+        <PropertyRef Name="equipment_class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_27">
+    <End Role="equipment_class" Type="ChroniclerModel.Store.equipment_class" Multiplicity="1" />
+    <End Role="equipment_class_dep" Type="ChroniclerModel.Store.equipment_class_dep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="equipment_class">
+        <PropertyRef Name="equipment_class_id" />
+      </Principal>
+      <Dependent Role="equipment_class_dep">
+        <PropertyRef Name="equipment_class_parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_28">
+    <End Role="equipment" Type="ChroniclerModel.Store.equipment" Multiplicity="1" />
+    <End Role="property" Type="ChroniclerModel.Store.property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="equipment">
+        <PropertyRef Name="equipment_id" />
+      </Principal>
+      <Dependent Role="property">
+        <PropertyRef Name="equipment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

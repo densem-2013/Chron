@@ -1,0 +1,16 @@
+C:\Users\ruslan_kovalenko.INFOCOM-LTD\Downloads\Chron\ChroniclerConfigurator\src\bin\Debug\ChroniclerConfigurator.exe.config
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\ChroniclerConfigurator.exe.config
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.Forms.AddOpcServerForm.resources
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.Forms.CreateChroniklerDBForm.resources
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.Forms.GroupForm.resources
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.MainForm.resources
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.Properties.Resources.resources
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.csproj.GenerateResource.Cache
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\Scripts\ChroniclerCreateDB.sql
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\Scripts\ChroniclerFillDB.sql
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\ChroniclerConfigurator.exe
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\ChroniclerConfigurator.pdb
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\OpcNetApi.Com.dll
+C:\Soft\Chron\ChroniclerConfigurator\src\bin\Debug\OpcNetApi.dll
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.exe
+C:\Soft\Chron\ChroniclerConfigurator\src\obj\x86\Debug\ChroniclerConfigurator.pdb

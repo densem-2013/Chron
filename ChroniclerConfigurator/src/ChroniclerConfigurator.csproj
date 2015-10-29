@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60961F13-2EB0-422F-B85D-0900C9416358}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChroniclerConfigurator</RootNamespace>
+    <AssemblyName>ChroniclerConfigurator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpcNetApi">
+      <HintPath>..\lib\OpcNetApi.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi.Com">
+      <HintPath>..\lib\OpcNetApi.Com.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcRcw.Da, Version=3.0.3.0, Culture=neutral, PublicKeyToken=9a40e993cbface53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\OpcRcw.Da.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Chronicler.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chronicler.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddOpcServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddOpcServerForm.Designer.cs">
+      <DependentUpon>AddOpcServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateChroniklerDBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateChroniklerDBForm.Designer.cs">
+      <DependentUpon>CreateChroniklerDBForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabs\GroupsTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabs\DataBaseTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabs\OpcServersTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ChroniclerSettings.cs" />
+    <Compile Include="ViewModels\DataBase.cs" />
+    <Compile Include="ViewModels\Group.cs" />
+    <Compile Include="ViewModels\OpcServer.cs" />
+    <Compile Include="ViewModels\Property.cs" />
+    <EmbeddedResource Include="Forms\AddOpcServerForm.resx">
+      <DependentUpon>AddOpcServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateChroniklerDBForm.resx">
+      <DependentUpon>CreateChroniklerDBForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <EntityDeploy Include="Data\Chronicler.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Chronicler.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\DataSources\ChroniclerConfigurator.Data.ChroniclerEntities.datasource" />
+    <None Include="Properties\DataSources\ChroniclerConfigurator.ViewModels.Group.datasource" />
+    <None Include="Properties\DataSources\ChroniclerConfigurator.ViewModels.OpcServer.datasource" />
+    <None Include="Properties\DataSources\ChroniclerConfigurator.ViewModels.Property.datasource" />
+    <None Include="Properties\DataSources\Opc.Da.BrowseElement.datasource" />
+    <None Include="Properties\DataSources\Opc.Server.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Remove.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\Previous.png" />
+    <Content Include="Scripts\ChroniclerCreateDB.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\ChroniclerFillDB.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

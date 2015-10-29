@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<config>
+ <database>
+  <connectionString>Provider=SQLNCLI10.1;Integrated Security=SSPI;Persist Security Info=False;User ID="chronicler";Initial Catalog=Chronicler;Data Source=chronicler;Initial File Name="";Server SPN="";Password="chronciler"</connectionString>
+ </database>
+ <OPC>
+  <server>
+    <isActive>1</isActive>
+    <serverId>OS003</serverId>
+    <serverName>{75D00BBB-DDA5-11D1-B944-9E614D000000}</serverName>
+    <hostName>192.168.0.3</hostName>
+  </server>
+  <server>
+    <isActive>0</isActive>
+    <serverId>OS002</serverId>
+    <serverName>{75D00BBB-DDA5-11D1-B944-9E614D000000}</serverName>
+    <hostName>192.168.0.2</hostName>
+  </server>
+  <server>
+    <isActive>0</isActive>
+    <serverId>OS001</serverId>
+    <serverName>{75D00BBB-DDA5-11D1-B944-9E614D000000}</serverName>
+    <hostName>192.168.0.1</hostName>
+  </server>
+ </OPC>
+</config>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChroniclerModelStoreContainer" CdmEntityContainer="ChroniclerEntities">
+    <EntitySetMapping Name="departments">
+      <EntityTypeMapping TypeName="ChroniclerModel.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="department_class_id" ColumnName="department_class_id" />
+          <ScalarProperty Name="department_description" ColumnName="department_description" />
+          <ScalarProperty Name="department_parent_id" ColumnName="department_parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="department_class">
+      <EntityTypeMapping TypeName="ChroniclerModel.department_class">
+        <MappingFragment StoreEntitySet="department_class">
+          <ScalarProperty Name="department_class_id" ColumnName="department_class_id" />
+          <ScalarProperty Name="department_class_name" ColumnName="department_class_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="department_class_dep">
+      <EntityTypeMapping TypeName="ChroniclerModel.department_class_dep">
+        <MappingFragment StoreEntitySet="department_class_dep">
+          <ScalarProperty Name="dependency_id" ColumnName="dependency_id" />
+          <ScalarProperty Name="department_class_id" ColumnName="department_class_id" />
+          <ScalarProperty Name="department_class_parent_id" ColumnName="department_class_parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="equipments">
+      <EntityTypeMapping TypeName="ChroniclerModel.equipment">
+        <MappingFragment StoreEntitySet="equipment">
+          <ScalarProperty Name="equipment_id" ColumnName="equipment_id" />
+          <ScalarProperty Name="equipment_name" ColumnName="equipment_name" />
+          <ScalarProperty Name="equipment_class_id" ColumnName="equipment_class_id" />
+          <ScalarProperty Name="equipment_descriprion" ColumnName="equipment_descriprion" />
+          <ScalarProperty Name="equipment_parent_id" ColumnName="equipment_parent_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="equipment_class">
+      <EntityTypeMapping TypeName="ChroniclerModel.equipment_class">
+        <MappingFragment StoreEntitySet="equipment_class">
+          <ScalarProperty Name="equipment_class_id" ColumnName="equipment_class_id" />
+          <ScalarProperty Name="equipment_class_name" ColumnName="equipment_class_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="equipment_class_dep">
+      <EntityTypeMapping TypeName="ChroniclerModel.equipment_class_dep">
+        <MappingFragment StoreEntitySet="equipment_class_dep">
+          <ScalarProperty Name="equipment_dependency_id" ColumnName="equipment_dependency_id" />
+          <ScalarProperty Name="equipment_class_id" ColumnName="equipment_class_id" />
+          <ScalarProperty Name="equipment_class_parent_id" ColumnName="equipment_class_parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="properties">
+      <EntityTypeMapping TypeName="ChroniclerModel.property">
+        <MappingFragment StoreEntitySet="property">
+          <ScalarProperty Name="property_id" ColumnName="property_id" />
+          <ScalarProperty Name="property_name" ColumnName="property_name" />
+          <ScalarProperty Name="string_value" ColumnName="string_value" />
+          <ScalarProperty Name="integer_value" ColumnName="integer_value" />
+          <ScalarProperty Name="boolean_value" ColumnName="boolean_value" />
+          <ScalarProperty Name="double_value" ColumnName="double_value" />
+          <ScalarProperty Name="date_value" ColumnName="date_value" />
+          <ScalarProperty Name="tag_name" ColumnName="tag_name" />
+          <ScalarProperty Name="last_update_date" ColumnName="last_update_date" />
+          <ScalarProperty Name="property_definition_id" ColumnName="property_definition_id" />
+          <ScalarProperty Name="collection_source_id" ColumnName="collection_source_id" />
+          <ScalarProperty Name="equipment_id" ColumnName="equipment_id" />
+          <ScalarProperty Name="property_storage_group_id" ColumnName="property_storage_group_id" />
+          <ScalarProperty Name="property_value_type_id" ColumnName="property_value_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="property_collection_source">
+      <EntityTypeMapping TypeName="ChroniclerModel.property_collection_source">
+        <MappingFragment StoreEntitySet="property_collection_source">
+          <ScalarProperty Name="collection_source_id" ColumnName="collection_source_id" />
+          <ScalarProperty Name="source_refresh_interval" ColumnName="source_refresh_interval" />
+          <ScalarProperty Name="source_description" ColumnName="source_description" />
+          <ScalarProperty Name="source_group_name" ColumnName="source_group_name" />
+          <ScalarProperty Name="source_is_active" ColumnName="source_is_active" />
+          <ScalarProperty Name="source_server_id" ColumnName="source_server_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="property_definition">
+      <EntityTypeMapping TypeName="ChroniclerModel.property_definition">
+        <MappingFragment StoreEntitySet="property_definition">
+          <ScalarProperty Name="property_definition_id" ColumnName="property_definition_id" />
+          <ScalarProperty Name="property_definition_name" ColumnName="property_definition_name" />
+          <ScalarProperty Name="property_definition_descr" ColumnName="property_definition_descr" />
+          <ScalarProperty Name="property_type_id" ColumnName="property_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="property_history">
+      <EntityTypeMapping TypeName="ChroniclerModel.property_history">
+        <MappingFragment StoreEntitySet="property_history">
+          <ScalarProperty Name="property_history_id" ColumnName="property_history_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="property_id" ColumnName="property_id" />
+          <ScalarProperty Name="string_value" ColumnName="string_value" />
+          <ScalarProperty Name="integer_value" ColumnName="integer_value" />
+          <ScalarProperty Name="boolean_value" ColumnName="boolean_value" />
+          <ScalarProperty Name="double_value" ColumnName="double_value" />
+          <ScalarProperty Name="date_value" ColumnName="date_value" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="finish_date" ColumnName="finish_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="property_storage_group">
+      <EntityTypeMapping TypeName="ChroniclerModel.property_storage_group">
+        <MappingFragment StoreEntitySet="property_storage_group">
+          <ScalarProperty Name="property_storage_group_id" ColumnName="property_storage_group_id" />
+          <ScalarProperty Name="storage_group_time" ColumnName="storage_group_time" />
+          <ScalarProperty Name="storage_group_is_historical" ColumnName="storage_group_is_historical" />
+          <ScalarProperty Name="storage_group_description" ColumnName="storage_group_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="property_type">
+      <EntityTypeMapping TypeName="ChroniclerModel.property_type">
+        <MappingFragment StoreEntitySet="property_type">
+          <ScalarProperty Name="property_type_id" ColumnName="property_type_id" />
+          <ScalarProperty Name="property_type_name" ColumnName="property_type_name" />
+          <ScalarProperty Name="property_type_description" ColumnName="property_type_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
